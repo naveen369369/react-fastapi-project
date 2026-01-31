@@ -9,7 +9,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # React URL
+    allow_origins=["https://dreamy-khapse-a6072c.netlify.app"],  # React URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
