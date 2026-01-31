@@ -4,6 +4,7 @@ from deps import get_db
 from database import engine, SessionLocal, Base
 from model import User
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
@@ -69,3 +70,9 @@ def dele(id:str,db:Session=Depends(get_db)):
     db.delete(user)
     db.commit()
     return{"message":"Deleted sucessfully"}
+
+app.mount(
+    "/",
+    StaticFiles(directory="Frontend/crud/dist", html=True),
+    name="frontend"
+)
