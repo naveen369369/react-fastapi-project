@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:8000"; // FastAPI base URL
+const API_URL = "https://react-fastapi-project-3.onrender.com"; // FastAPI base URL
 
 export const getUsers = () => {
   return axios.get(`${API_URL}/view`);
