@@ -1,8 +1,8 @@
-from database import SessionLocal #“A machine that creates DB connections”
+from database import SessionLocal
 
 def get_db():
-    db = SessionLocal() #Creates one database session
+    db = SessionLocal()
     try:
-        yield db #“Pause this function here, give db to FastAPI, and continue later.”
+        yield db
     finally:
         db.close()
